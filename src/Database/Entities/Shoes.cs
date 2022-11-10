@@ -20,5 +20,4 @@ public class Shoes
     public virtual List<Reviews>? Reviews { get; set; }
     public virtual List<Images>? Images { get; set; }
     public virtual List<MainImages> MainImages { get; set; }
-    public virtual List<User> Users { get; set; }
 }
