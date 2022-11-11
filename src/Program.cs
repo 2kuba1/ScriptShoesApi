@@ -11,6 +11,7 @@ using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.Users;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Tokens;
+using ScriptShoesCQRS.Features.Users.UsersValidators;
 using ScriptShoesCQRS.PipelineBehaviors;
 using ScriptShoesCQRS.Services.DiscordLogger;
 

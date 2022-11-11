@@ -3,7 +3,7 @@ using FluentValidation;
 using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 
-namespace ScriptShoesCQRS.Features.Users;
+namespace ScriptShoesCQRS.Features.Users.UsersValidators;
 
 public class CreateUserCommandValidator : AbstractValidator<CreateUserCommand>
 {
