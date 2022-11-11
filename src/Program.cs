@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.Users;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesCQRS.PipelineBehaviors;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -56,7 +57,7 @@ builder.Services.AddSwaggerGen(c =>
 });
 
 builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
-
+builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
     var app = builder.Build();
 
 // Configure the HTTP request pipeline.

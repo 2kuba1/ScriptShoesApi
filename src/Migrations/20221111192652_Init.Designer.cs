@@ -12,8 +12,8 @@ using ScriptShoesCQRS.Database;
 namespace ScriptShoesCQRS.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20221109165032_ChangeUsersEntityToUser")]
-    partial class ChangeUsersEntityToUser
+    [Migration("20221111192652_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -248,9 +248,6 @@ namespace ScriptShoesCQRS.Migrations
                     b.Property<int>("RoleId")
                         .HasColumnType("int");
 
-                    b.Property<int?>("ShoesId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Surname")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -268,8 +265,6 @@ namespace ScriptShoesCQRS.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("RoleId");
-
-                    b.HasIndex("ShoesId");
 
                     b.ToTable("Users");
                 });
@@ -379,10 +374,6 @@ namespace ScriptShoesCQRS.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ScriptShoesCQRS.Database.Entities.Shoes", null)
-                        .WithMany("Users")
-                        .HasForeignKey("ShoesId");
-
                     b.Navigation("Role");
                 });
 
@@ -397,8 +388,6 @@ namespace ScriptShoesCQRS.Migrations
                     b.Navigation("Reviews");
 
                     b.Navigation("Sizes");
-
-                    b.Navigation("Users");
                 });
 #pragma warning restore 612, 618
         }
