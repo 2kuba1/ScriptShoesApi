@@ -22,7 +22,8 @@ public class CreateUserHandler : IRequestHandler<CreateUserCommand, Unit>
         var passwordHash =  HashPassword(request.Password);
         
         user.HashedPassword = passwordHash;
-        user.RoleId = 1;
+        user.RoleId = 2;
+        user.ProfilePictureUrl = "https://cdn.discordapp.com/attachments/1023999045536059404/1039613165207568404/defaultAvatar.png";
 
         await _dbContext.AddAsync(user, cancellationToken);
         await _dbContext.SaveChangesAsync(cancellationToken);
