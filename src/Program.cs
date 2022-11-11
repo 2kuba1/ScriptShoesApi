@@ -10,6 +10,7 @@ using Microsoft.OpenApi.Models;
 using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.Users;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesCQRS.Features.Users.Queries.Login;
 using ScriptShoesCQRS.Features.Users.Tokens;
 using ScriptShoesCQRS.Features.Users.UsersValidators;
 using ScriptShoesCQRS.PipelineBehaviors;
@@ -83,11 +84,12 @@ builder.Services.AddAuthentication(options =>
 });
 builder.Services.AddHttpContextAccessor();
 
-
-builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
 builder.Services.AddTransient<IDiscordLoggerService, DiscordLoggerService>();
 builder.Services.AddScoped<ITokensMethods, TokensMethods>();
+
+builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
+builder.Services.AddScoped<IValidator<LoginQuery>, LoginQueryValidator>();
 
 var app = builder.Build();
 
