@@ -1,8 +1,10 @@
-﻿using MediatR;
+﻿using System.Runtime.InteropServices;
+using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
+using ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
 using ScriptShoesCQRS.Models.Users;
 
 namespace ScriptShoesCQRS.Controllers;
@@ -31,6 +33,15 @@ public class AccountController : ControllerBase
     [AllowAnonymous]
     [Route("loginUser")]
     public async Task<ActionResult<AuthenticationUserResponse>> LoginUser([FromBody] LoginQuery query)
+    {
+        var result = await _mediator.Send(query);
+        return Ok(result);
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    [Route(("refreshToken"))]
+    public async Task<ActionResult<AuthenticationUserResponse>> RefreshToken([FromQuery] RefreshTokenQuery query)
     {
         var result = await _mediator.Send(query);
         return Ok(result);

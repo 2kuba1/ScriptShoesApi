@@ -56,11 +56,12 @@ public class TokensMethods : ITokensMethods
     {
         var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.NameIdentifier, user.Id.ToString()),
+            new Claim("Id", user.Id.ToString()),
             new Claim("Username", user.Username),
-            new Claim(ClaimTypes.Name, $"{user.Name}"),
-            new Claim(ClaimTypes.Surname, $"{user.Surname}"),
-            new Claim(ClaimTypes.Email, $"{user.Email}"),
+            new Claim("Name", $"{user.Name}"),
+            new Claim("Surname", $"{user.Surname}"),
+            new Claim("Email", $"{user.Email}"),
+            new Claim("ProfilePicture", user.ProfilePictureUrl),
             new Claim(ClaimTypes.Role, $"{user.Role.Name}"),
         };
             
