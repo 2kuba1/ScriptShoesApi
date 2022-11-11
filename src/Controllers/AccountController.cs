@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesCQRS.Features.Users.Queries.Login;
+using ScriptShoesCQRS.Models.Users;
 
 namespace ScriptShoesCQRS.Controllers;
 
@@ -23,5 +25,14 @@ public class AccountController : ControllerBase
     {
         await _mediator.Send(command);
         return NoContent();
+    }
+
+    [HttpPost]
+    [AllowAnonymous]
+    [Route("loginUser")]
+    public async Task<ActionResult<AuthenticationUserResponse>> LoginUser([FromBody] LoginQuery query)
+    {
+        var result = await _mediator.Send(query);
+        return Ok(result);
     }
 }
