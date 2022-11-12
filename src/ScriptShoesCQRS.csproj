@@ -29,7 +29,6 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Exceptions" />
       <Folder Include="Features\AdminPanel\AdminPanelValidators" />
       <Folder Include="Features\Shoes\Commands" />
     </ItemGroup>
