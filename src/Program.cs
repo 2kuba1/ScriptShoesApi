@@ -16,6 +16,7 @@ using ScriptShoesCQRS.Features.Users.UsersValidators;
 using ScriptShoesCQRS.PipelineBehaviors;
 using ScriptShoesCQRS.Services.DiscordLogger;
 using ScriptShoesCQRS.Services.EmailSender;
+using ScriptShoesCQRS.Services.UserContext;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -89,6 +90,8 @@ builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBeh
 builder.Services.AddTransient<IDiscordLoggerService, DiscordLoggerService>();
 builder.Services.AddScoped<ITokensMethods, TokensMethods>();
 builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
+builder.Services.AddScoped<IUserContextService, UserContextService>();
+
 
 builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
 builder.Services.AddScoped<IValidator<LoginQuery>, LoginQueryValidator>();
