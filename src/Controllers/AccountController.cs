@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
+using ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
 using ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
 using ScriptShoesCQRS.Models.Users;
@@ -59,5 +60,18 @@ public class AccountController : ControllerBase
         });
 
         return new NoContentResult();
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "User,Admin")]
+    [Route("verifyEmailCode")]
+    public async Task<ActionResult> VerifyEmailCode([FromQuery] string code)
+    {
+        await _mediator.Send(new VerifyEmailCode()
+        {
+            Code = code
+        });
+
+        return NoContent();
     }
 }
