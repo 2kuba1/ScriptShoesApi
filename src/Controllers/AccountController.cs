@@ -3,6 +3,7 @@ using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
 using ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
 using ScriptShoesCQRS.Models.Users;
@@ -45,5 +46,18 @@ public class AccountController : ControllerBase
     {
         var result = await _mediator.Send(query);
         return Ok(result);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "User,Admin")]
+    [Route("sendEmailWithActivationCode")]
+    public async Task<ActionResult> SendEmailWithActivationCode()
+    {
+        await _mediator.Send(new SendEmailWithActivationCodeCommand()
+        {
+            Subject = "Script shoes verification email"
+        });
+
+        return new NoContentResult();
     }
 }
