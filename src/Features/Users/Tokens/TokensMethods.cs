@@ -62,6 +62,7 @@ public class TokensMethods : ITokensMethods
             new Claim("Surname", $"{user.Surname}"),
             new Claim("Email", $"{user.Email}"),
             new Claim("ProfilePicture", user.ProfilePictureUrl),
+            new Claim("IsActivated", user.IsActivated.ToString()),
             new Claim(ClaimTypes.Role, $"{user.Role.Name}"),
         };
             
