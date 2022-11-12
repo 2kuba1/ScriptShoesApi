@@ -1,7 +1,9 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoesCQRS.Features.Shoes.Commands.AddShoe;
 using ScriptShoesCQRS.Features.Shoes.Queries.GetAllShoes;
+using ScriptShoesCQRS.Features.Shoes.Queries.GetFilters;
 using ScriptShoesCQRS.Features.Shoes.Queries.GetShoesByName;
 using ScriptShoesCQRS.Features.Shoes.Queries.GetShoeWithContent;
 using ScriptShoesCQRS.Models.Shoes;
@@ -51,5 +53,22 @@ public class ShoesController : ControllerBase
         });
         
         return Ok(result);
+    }
+    
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getFilters")]
+    public async Task<ActionResult<GetFiltersDto>> GteFilters()
+    {
+        var results = await _mediator.Send(new GetFiltersQuery());
+        return Ok(results);
+    }
+
+    [HttpPost]
+    [Authorize(Roles = "Admin")]
+    public async Task<ActionResult> CreateShoe([FromBody] AddShoeCommand command)
+    {
+        await _mediator.Send(command);
+        return NoContent();
     }
 }

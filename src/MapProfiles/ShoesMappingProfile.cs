@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Database.Entities;
+using ScriptShoesCQRS.Features.Shoes.Commands.AddShoe;
 using ScriptShoesCQRS.Models.Reviews;
 using ScriptShoesCQRS.Models.Shoes;
 
@@ -14,5 +15,6 @@ public class ShoesMappingProfile : Profile
         CreateMap<Shoes, GetShoeWithContentDto>();
         CreateMap<Reviews, ReviewsDto>().ForMember(s => s.ProfilePicture, c => c.MapFrom(s => s.Users.ProfilePictureUrl));
         CreateMap<Shoes, GetAllShoesDto>().ForMember(s => s.Reviews, c => c.MapFrom(d => d.Reviews));
+        CreateMap<AddShoeCommand, Shoes>();
     }
 }
