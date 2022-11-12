@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
 namespace ScriptShoesCQRS.Controllers;
 
@@ -18,8 +19,15 @@ public class AdminPanelController : ControllerBase
     }
     
     [HttpPost]
-    [Authorize(Roles = "Admin")]
+    [Route("createShoe")]
     public async Task<ActionResult> CreateShoe([FromBody] AddShoeCommand command)
+    {
+        await _mediator.Send(command);
+        return NoContent();
+    }
+
+    [HttpPut]
+    public async Task<ActionResult> UpdateShoe([FromBody] UpdateShoeCommand command)
     {
         await _mediator.Send(command);
         return NoContent();
