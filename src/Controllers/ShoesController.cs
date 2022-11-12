@@ -21,6 +21,7 @@ public class ShoesController : ControllerBase
     
     [HttpGet]
     [AllowAnonymous]
+    [Route("getAllShoes")]
     public async Task<ActionResult<IEnumerable<GetAllShoesDto>>> GetAll()
     {
         var shoesList = await _mediator.Send(new GetAllShoesQuery());
@@ -29,7 +30,7 @@ public class ShoesController : ControllerBase
     
     [HttpGet]
     [AllowAnonymous]
-    [Route("/api/getByName")]
+    [Route("getShoeByName")]
     public async Task<ActionResult<IEnumerable<GetShoesByNameDto>>> GetByName([FromQuery]string searchPhrase)
     {
         var results = await _mediator.Send(new GetShoesByNameQuery()
@@ -41,7 +42,7 @@ public class ShoesController : ControllerBase
     
     [HttpGet]
     [AllowAnonymous]
-    [Route("/api/getShoe")]
+    [Route("getShoe")]
     public async Task<ActionResult<GetShoeWithContentResponse>> GetShoeWithContent([FromQuery]string shoeName)
     {
         var result = await _mediator.Send(new GetShoeWithContentQuery()
