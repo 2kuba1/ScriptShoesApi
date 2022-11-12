@@ -27,6 +27,7 @@ public class AdminPanelController : ControllerBase
     }
 
     [HttpPut]
+    [Route("updateShoe")]
     public async Task<ActionResult> UpdateShoe([FromBody] UpdateShoeCommand command)
     {
         await _mediator.Send(command);
