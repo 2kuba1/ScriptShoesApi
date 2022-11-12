@@ -8,8 +8,13 @@
 
     <ItemGroup>
         <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.0" />
+        <PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
+        <PackageReference Include="DiscordMessenger" Version="2.0.2" />
+        <PackageReference Include="FluentValidation.AspNetCore" Version="11.2.2" />
+        <PackageReference Include="MailKit" Version="3.4.2" />
         <PackageReference Include="MediatR" Version="11.0.0" />
         <PackageReference Include="MediatR.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
+        <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.11" />
         <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.11">
@@ -20,9 +25,12 @@
     </ItemGroup>
 
     <ItemGroup>
+        <Using Include="BCrypt.Net.BCrypt" Static="True" />
+    </ItemGroup>
+
+    <ItemGroup>
       <Folder Include="Exceptions" />
       <Folder Include="Features\Shoes\Commands" />
-      <Folder Include="Services" />
     </ItemGroup>
 
 </Project>
