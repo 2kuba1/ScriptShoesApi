@@ -3,7 +3,7 @@ using ScriptShoesCQRS.Models.Users;
 
 namespace ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 
-public class CreateUserCommand : IRequest
+public record CreateUserCommand : IRequest
 {
     public string Username { get; set; }
     public string Password { get; set; }
