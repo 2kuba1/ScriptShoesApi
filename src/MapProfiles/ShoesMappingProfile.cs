@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Database.Entities;
-using ScriptShoesCQRS.Features.Shoes.Commands.AddShoe;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Models.Reviews;
 using ScriptShoesCQRS.Models.Shoes;
 

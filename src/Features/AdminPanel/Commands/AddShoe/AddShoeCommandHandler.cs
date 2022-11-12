@@ -5,7 +5,7 @@ using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Services.DiscordLogger;
 using ScriptShoesCQRS.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Shoes.Commands.AddShoe;
+namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 
 public class AddShoeCommandHandler : IRequestHandler<AddShoeCommand,int>
 {

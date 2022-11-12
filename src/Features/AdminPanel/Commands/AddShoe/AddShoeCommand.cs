@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Shoes.Commands.AddShoe;
+namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 
 public class AddShoeCommand : IRequest<int>
 {
