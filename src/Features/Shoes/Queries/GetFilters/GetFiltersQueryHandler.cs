@@ -26,25 +26,21 @@ public class GetFiltersQueryHandler : IRequestHandler<GetFiltersQuery, GetFilter
         var types = new List<string>();
         var sizes = new List<string>();
 
-        for (int i = 0; i < sizesList.Count; i++)
+        foreach (var t in sizesList.Where(t => !sizes.Contains(t)))
         {
-            if (!sizes.Contains(sizesList[i]))
-            {
-                sizes.Add(sizesList[i]);
-            }
+            sizes.Add(t);
         }
             
-        for (int i = 0; i < filters.Count; i++)
+        foreach (var t in filters)
         {
-
-            if (!brands.Contains(filters[i].Brand))
+            if (!brands.Contains(t.Brand))
             {
-                brands.Add(filters[i].Brand);
+                brands.Add(t.Brand);
             }
                 
-            if (!types.Contains(filters[i].ShoeType))
+            if (!types.Contains(t.ShoeType))
             {
-                types.Add(filters[i].ShoeType);
+                types.Add(t.ShoeType);
             }
         }
 
