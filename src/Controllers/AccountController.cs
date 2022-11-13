@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Users.Commands.AddProfilePicture;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesCQRS.Features.Users.Commands.DeleteProfilePicture;
 using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
 using ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
@@ -83,5 +84,14 @@ public class AccountController : ControllerBase
     {
         await _mediator.Send(command);
         return NoContent();
+    }
+    
+    [HttpDelete]
+    [Route("deleteProfilePicture")]
+    [Authorize(Roles = "User,Admin")]
+    public async Task<ActionResult> DeleteProfilePicture()
+    {
+        await _mediator.Send(new DeleteProfilePictureCommand());
+        return Ok();
     }
 }
