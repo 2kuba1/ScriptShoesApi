@@ -31,6 +31,9 @@
 
     <ItemGroup>
       <Folder Include="Features\Shoes\Commands" />
+      <Folder Include="wwwroot\Images" />
+      <Folder Include="wwwroot\MainImages" />
+      <Folder Include="wwwroot\UsersProfilePictures" />
     </ItemGroup>
 
 </Project>

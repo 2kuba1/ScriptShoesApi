@@ -102,9 +102,9 @@ builder.Services.AddScoped<IValidator<AddShoeCommand>, AddShoeValidator>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptShoes API"); });
-app.UseStaticFiles();
 
 app.UseHttpsRedirection();
 
