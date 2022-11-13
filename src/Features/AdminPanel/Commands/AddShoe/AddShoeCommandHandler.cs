@@ -33,14 +33,12 @@ public class AddShoeCommandHandler : IRequestHandler<AddShoeCommand,int>
         await _dbContext.SaveChangesAsync(cancellationToken);
         var sizeList = request.SizesList.Split(",").ToList();
 
-        foreach (var sizes in sizeList)
+        foreach (var size in sizeList.Select(sizes => new ShoeSizes()
+                 {
+                     ShoesId = shoe.Id,
+                     Sizes = sizes
+                 }))
         {
-            var size = new ShoeSizes()
-            {
-                ShoesId = shoe.Id,
-                Sizes = sizes
-            };
-
             await _dbContext.ShoeSizes.AddAsync(size, cancellationToken);
             await _dbContext.SaveChangesAsync(cancellationToken);
         }
