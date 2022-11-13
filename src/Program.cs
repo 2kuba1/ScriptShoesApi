@@ -8,6 +8,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using ScriptShoesCQRS.Database;
+using ScriptShoesCQRS.Features.AdminPanel.AdminPanelValidators;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Features.Users;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
@@ -95,6 +97,7 @@ builder.Services.AddScoped<IUserContextService, UserContextService>();
 
 builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
 builder.Services.AddScoped<IValidator<LoginQuery>, LoginQueryValidator>();
+builder.Services.AddScoped<IValidator<AddShoeCommand>, AddShoeValidator>();
 
 var app = builder.Build();
 
