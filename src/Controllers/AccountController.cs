@@ -6,6 +6,7 @@ using ScriptShoesCQRS.Features.Users.Commands.AddProfilePicture;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Commands.DeleteProfilePicture;
 using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
+using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithNewActivationCode;
 using ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
 using ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
@@ -64,6 +65,15 @@ public class AccountController : ControllerBase
         return new NoContentResult();
     }
 
+    [HttpPost]
+    [Authorize(Roles = "User,Admin")]
+    [Route("sendEmailWithNewActivationCode")]
+    public async Task<ActionResult> SendEmailWithNewActivationCode()
+    {
+        await _mediator.Send(new SendEmailWithNewActivationCodeCommand());
+        return new NoContentResult();
+    }
+    
     [HttpPost]
     [Authorize(Roles = "User,Admin")]
     [Route("verifyEmailCode")]
