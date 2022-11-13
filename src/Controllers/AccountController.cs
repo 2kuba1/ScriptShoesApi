@@ -2,6 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoesCQRS.Features.Users.Commands.AddProfilePicture;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
 using ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
@@ -72,6 +73,15 @@ public class AccountController : ControllerBase
             Code = code
         });
 
+        return NoContent();
+    }
+    
+    [HttpPost]
+    [Route("addProfilePicture")]
+    [Authorize(Roles = "User,Admin")]
+    public async Task<ActionResult> AddProfilePicture([FromForm] AddProfilePictureCommand command)
+    {
+        await _mediator.Send(command);
         return NoContent();
     }
 }
