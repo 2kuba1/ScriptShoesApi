@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.DeleteShoe;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
 namespace ScriptShoesCQRS.Controllers;
@@ -35,7 +36,18 @@ public class AdminPanelController : ControllerBase
         await _mediator.Send(command);
         return NoContent();
     }
-    
+
+    [HttpDelete]
+    [Route("deleteShoe")]
+    public async Task<ActionResult> DeleteShoe([FromQuery] string shoeName)
+    {
+        await _mediator.Send(new DeleteShoeCommand()
+        {
+            ShoeName = shoeName
+        });
+        return NoContent();
+    }
+
     [HttpPost]
     [Route("addShoeMainImage")]
     public async Task<ActionResult> AddShoeMainImage([FromForm] IFormFile file, [FromQuery] string shoeName)
