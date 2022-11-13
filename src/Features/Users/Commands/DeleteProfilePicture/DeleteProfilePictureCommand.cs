@@ -2,7 +2,7 @@
 
 namespace ScriptShoesCQRS.Features.Users.Commands.DeleteProfilePicture;
 
-public class DeleteProfilePictureCommand : IRequest
+public record DeleteProfilePictureCommand : IRequest
 {
     
 }

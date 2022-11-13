@@ -2,7 +2,7 @@
 
 namespace ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
-public class UpdateShoeCommand : IRequest
+public record UpdateShoeCommand : IRequest
 {
     public string ShoeName { get; set; }
     public string NewName { get; set; }

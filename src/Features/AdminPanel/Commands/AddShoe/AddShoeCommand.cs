@@ -2,7 +2,7 @@
 
 namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 
-public class AddShoeCommand : IRequest<int>
+public record AddShoeCommand : IRequest<int>
 {
     public string Brand { get; set; }
     public string Name { get; set; }

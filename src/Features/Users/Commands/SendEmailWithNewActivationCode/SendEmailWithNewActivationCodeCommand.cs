@@ -2,7 +2,7 @@
 
 namespace ScriptShoesCQRS.Features.Users.Commands.SendEmailWithNewActivationCode;
 
-public class SendEmailWithNewActivationCodeCommand : IRequest
+public record SendEmailWithNewActivationCodeCommand : IRequest
 {
     
 }
