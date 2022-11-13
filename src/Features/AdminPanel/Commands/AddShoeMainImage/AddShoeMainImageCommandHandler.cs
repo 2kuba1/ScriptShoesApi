@@ -45,7 +45,7 @@ public class AddShoeMainImageCommandHandler : IRequestHandler<AddShoeMainImageCo
 
         var mainImage = new MainImages()
         {
-            MainImg = $"https://sctipshoesfilesstoarege.blob.core.windows.net/mainimages/{newFileName}",
+            MainImg = fullPath,
             ShoesId = checkId.Id,
             ImageName = newFileName
         };
