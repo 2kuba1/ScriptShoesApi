@@ -46,9 +46,9 @@ public class AddProfilePictureCommandHandler : IRequestHandler<AddProfilePicture
 
             var filePath = previousFileName[0] + previousFileName[1];
             
-            if (Directory.Exists(filePath))
+            if (File.Exists(filePath))
             {
-                Directory.Delete(filePath);
+                File.Delete(filePath);
             }
         }
 
