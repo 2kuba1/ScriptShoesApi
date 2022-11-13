@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
@@ -40,6 +41,18 @@ public class AdminPanelController : ControllerBase
     public async Task<ActionResult> AddShoeMainImage([FromForm] IFormFile file, [FromQuery] string shoeName)
     {
         await _mediator.Send(new AddShoeMainImageCommand()
+        {
+            File = file,
+            ShoeName = shoeName
+        });
+        return NoContent();
+    }
+    
+    [HttpPost]
+    [Route("addShoeImage")]
+    public async Task<ActionResult> AddShoeImage([FromForm] IFormFile file, [FromQuery] string shoeName)
+    {
+        await _mediator.Send(new AddShoeImageCommand()
         {
             File = file,
             ShoeName = shoeName
