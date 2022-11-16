@@ -5,6 +5,7 @@ using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.DeleteShoe;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateMainImg;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
 namespace ScriptShoesCQRS.Controllers;
@@ -69,6 +70,19 @@ public class AdminPanelController : ControllerBase
             File = file,
             ShoeName = shoeName
         });
+        return NoContent();
+    }
+
+    [HttpPost]
+    [Route("updateShoeMainImage")]
+    public async Task<ActionResult> UpdateShoeMainImage([FromForm] IFormFile file, [FromQuery] string shoeName)
+    {
+        await _mediator.Send(new UpdateMainImgCommand()
+        {
+            File = file,
+            ShoeName = shoeName
+        });
+
         return NoContent();
     }
 }
