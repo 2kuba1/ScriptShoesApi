@@ -18,7 +18,7 @@ public class AppDbContext : DbContext
     public DbSet<Favorites> Favorites { get; set; }
     public DbSet<ShoeSizes> ShoeSizes { get; set; }
     public DbSet<Reviews> Reviews { get; set; }
-    
+    public DbSet<ReviewsLikes> ReviewsLikes { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Roles>()
