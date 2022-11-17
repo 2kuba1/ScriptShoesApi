@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
 using ScriptShoesCQRS.Features.Reviews.Queries;
+using ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
 using ScriptShoesCQRS.Models.Reviews;
 
 namespace ScriptShoesCQRS.Controllers;

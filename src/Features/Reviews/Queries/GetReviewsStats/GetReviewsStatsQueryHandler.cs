@@ -2,7 +2,7 @@
 using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries;
+namespace ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
 
 public class GetReviewsStatsQueryHandler : IRequestHandler<GetReviewsStatsQuery, ReviewsStatsDto>
 {

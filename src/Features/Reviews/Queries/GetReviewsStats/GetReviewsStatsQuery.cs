@@ -1,7 +1,7 @@
 ﻿using MediatR;
 using ScriptShoesCQRS.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries;
+namespace ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
 
 public class GetReviewsStatsQuery : IRequest<ReviewsStatsDto>
 {
