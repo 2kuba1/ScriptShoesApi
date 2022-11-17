@@ -11,6 +11,7 @@ using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetAvailableReviews;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetLikedReviews;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
+using ScriptShoesCQRS.Features.Reviews.Queries.GetShoeReviews;
 using ScriptShoesCQRS.Models.Reviews;
 
 namespace ScriptShoesCQRS.Controllers;
@@ -149,6 +150,19 @@ public class ReviewsController : ControllerBase
     public async Task<ActionResult<IEnumerable<int>>> GetAvailableUserReviews([FromRoute] int shoeId)
     {
         var result = await _mediator.Send(new GetAvailableReviewsQuery()
+        {
+            ShoeId = shoeId
+        });
+
+        return Ok(result);
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getShoeReviews")]
+    public async Task<ActionResult<IEnumerable<int>>> GetShoeReviews([FromRoute] int shoeId)
+    {
+        var result = await _mediator.Send(new GetShoeReviewsQuery()
         {
             ShoeId = shoeId
         });

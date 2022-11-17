@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
 using ScriptShoesCQRS.Models.Reviews;
 
@@ -9,5 +10,6 @@ public class ReviewsMappingProfile : Profile
     public ReviewsMappingProfile()
     {
         CreateMap<UpdateReviewCommand, ReviewsDto>();
+        CreateMap<Reviews, ReviewsDto>();
     }
 }
