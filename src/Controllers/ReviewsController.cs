@@ -5,6 +5,7 @@ using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Features.Reviews.Commands.AddLikeToReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.RemoveLike;
+using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetLikedReviews;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
 using ScriptShoesCQRS.Models.Reviews;
@@ -85,6 +86,21 @@ public class ReviewsController : ControllerBase
     {
         await _mediator.Send(new RemoveLikeCommand()
         {
+            ReviewId = reviewId,
+            ShoeId = shoeId
+        });
+
+        return NoContent();
+    }
+
+    [HttpPut]
+    [Authorize(Roles = "User,Admin")]
+    [Route("updateReviewLike/{reviewId:int}")] //toggle like implementation
+    public async Task<ActionResult> UpdateReviewLike([FromRoute] int shoeId, [FromRoute] int reviewId, int likes)
+    {
+        await _mediator.Send(new UpdateReviewLikeCommand()
+        {
+            Likes = likes,
             ReviewId = reviewId,
             ShoeId = shoeId
         });
