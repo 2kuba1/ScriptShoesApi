@@ -11,6 +11,7 @@ using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.AdminPanel.AdminPanelValidators;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
+using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
 using ScriptShoesCQRS.Features.Reviews.ReviewsValidators;
 using ScriptShoesCQRS.Features.Users;
 using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
@@ -103,6 +104,7 @@ builder.Services.AddScoped<IValidator<LoginQuery>, LoginQueryValidator>();
 builder.Services.AddScoped<IValidator<AddShoeCommand>, AddShoeValidator>();
 builder.Services.AddScoped<IValidator<UpdateShoeCommand>, UpdateShoeValidator>();
 builder.Services.AddScoped<IValidator<CreateReviewDto>, CreateReviewCommandValidator>();
+builder.Services.AddScoped<IValidator<UpdateReviewDto>, UpdateReviewCommandValidator>();
 
 var app = builder.Build();
 
