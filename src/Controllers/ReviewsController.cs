@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Features.Reviews.Commands.AddLikeToReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
+using ScriptShoesCQRS.Features.Reviews.Commands.DeleteReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.RemoveLike;
 using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
@@ -120,6 +121,20 @@ public class ReviewsController : ControllerBase
             Rate = dto.Rate,
             Review = dto.Review,
             Title = dto.Title,
+            ReviewId = reviewId,
+            ShoeId = shoeId
+        });
+
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Authorize(Roles = "User,Admin")]
+    [Route("deleteReview/{reviewId:int}")]
+    public async Task<ActionResult> DeleteReview([FromRoute] int shoeId, [FromRoute] int reviewId)
+    {
+        await _mediator.Send(new DeleteReviewCommand()
+        {
             ReviewId = reviewId,
             ShoeId = shoeId
         });
