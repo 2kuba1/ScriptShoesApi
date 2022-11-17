@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesApi.Entities;
 using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
+using ScriptShoesCQRS.Features.Reviews.Queries;
 using ScriptShoesCQRS.Models.Reviews;
 
 namespace ScriptShoesCQRS.Controllers;
@@ -31,6 +32,19 @@ public class ReviewsController : ControllerBase
             ShoeId = shoeId
         });
         
+        return result;
+    }
+
+    [HttpGet]
+    [AllowAnonymous]
+    [Route("getReviewsStats")]
+    public async Task<ReviewsStatsDto> GetReviewsStats([FromRoute] int shoeId)
+    {
+        var result = await _mediator.Send(new GetReviewsStatsQuery()
+        {
+            ShoeId = shoeId
+        });
+
         return result;
     }
 }
