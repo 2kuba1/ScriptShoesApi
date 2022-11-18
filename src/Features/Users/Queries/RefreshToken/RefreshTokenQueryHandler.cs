@@ -7,12 +7,12 @@ using ScriptShoesCQRS.Models.Users;
 
 namespace ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
 
-public class RefreshTokenHandler : IRequestHandler<RefreshTokenQuery, AuthenticationUserResponse>
+public class RefreshTokenQueryHandler : IRequestHandler<RefreshTokenQuery, AuthenticationUserResponse>
 {
     private readonly AppDbContext _dbContext;
     private readonly ITokensMethods _tokensMethods;
 
-    public RefreshTokenHandler(AppDbContext dbContext, ITokensMethods tokensMethods)
+    public RefreshTokenQueryHandler(AppDbContext dbContext, ITokensMethods tokensMethods)
     {
         _dbContext = dbContext;
         _tokensMethods = tokensMethods;

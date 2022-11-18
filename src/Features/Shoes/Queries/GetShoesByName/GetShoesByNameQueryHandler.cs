@@ -6,12 +6,12 @@ using ScriptShoesCQRS.Models.Shoes;
 
 namespace ScriptShoesCQRS.Features.Shoes.Queries.GetShoesByName;
 
-public class GetShoesByNameHandler : IRequestHandler<GetShoesByNameQuery, IEnumerable<GetShoesByNameDto>>
+public class GetShoesByNameQueryHandler : IRequestHandler<GetShoesByNameQuery, IEnumerable<GetShoesByNameDto>>
 {
     private readonly AppDbContext _dbContext;
     private readonly IMapper _mapper;
 
-    public GetShoesByNameHandler(AppDbContext dbContext, IMapper mapper)
+    public GetShoesByNameQueryHandler(AppDbContext dbContext, IMapper mapper)
     {
         _dbContext = dbContext;
         _mapper = mapper;

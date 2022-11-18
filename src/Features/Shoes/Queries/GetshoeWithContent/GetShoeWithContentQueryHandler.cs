@@ -8,12 +8,12 @@ using ScriptShoesCQRS.Models.Shoes;
 
 namespace ScriptShoesCQRS.Features.Shoes.Queries.GetShoeWithContent;
 
-public class GetShoeWithContentHandler : IRequestHandler<GetShoeWithContentQuery, GetShoeWithContentResponse>
+public class GetShoeWithContentQueryHandler : IRequestHandler<GetShoeWithContentQuery, GetShoeWithContentResponse>
 {
     private readonly AppDbContext _dbContext;
     private readonly IMapper _mapper;
 
-    public GetShoeWithContentHandler(AppDbContext dbContext, IMapper mapper)
+    public GetShoeWithContentQueryHandler(AppDbContext dbContext, IMapper mapper)
     {
         _dbContext = dbContext;
         _mapper = mapper;
