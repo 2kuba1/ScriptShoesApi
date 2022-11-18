@@ -18,6 +18,7 @@ using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
 using ScriptShoesCQRS.Features.Users.Tokens;
 using ScriptShoesCQRS.Features.Users.UsersValidators;
+using ScriptShoesCQRS.Middleware;
 using ScriptShoesCQRS.Models.Reviews;
 using ScriptShoesCQRS.PipelineBehaviors;
 using ScriptShoesCQRS.Services.DiscordLogger;
@@ -97,6 +98,7 @@ builder.Services.AddTransient<IDiscordLoggerService, DiscordLoggerService>();
 builder.Services.AddScoped<ITokensMethods, TokensMethods>();
 builder.Services.AddScoped<IEmailSenderService, EmailSenderService>();
 builder.Services.AddScoped<IUserContextService, UserContextService>();
+builder.Services.AddScoped<ErrorHandlingMiddleWare>();
 
 
 builder.Services.AddScoped<IValidator<CreateUserCommand>, CreateUserCommandValidator>();
@@ -112,7 +114,7 @@ var app = builder.Build();
 app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptShoes API"); });
-
+app.UseMiddleware<ErrorHandlingMiddleWare>();
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
