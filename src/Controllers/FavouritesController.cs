@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Favourites.Commands.AddToFavourites;
 using ScriptShoesCQRS.Features.Favourites.Commands.RemoveShoeFromFavourites;
+using ScriptShoesCQRS.Features.Favourites.Queries.GetFavourites;
+using ScriptShoesCQRS.Models.Favourites;
 
 namespace ScriptShoesCQRS.Controllers;
 
@@ -40,5 +42,13 @@ public class FavouritesController : ControllerBase
         });
 
         return NoContent();
+    }
+
+    [HttpGet]
+    public async Task<ActionResult<IEnumerable<GetFavouritesDto>>> GetFavourites()
+    {
+        var results = await _mediator.Send(new GetFavouritesQuery());
+
+        return Ok(results);
     }
 }
