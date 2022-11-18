@@ -45,6 +45,7 @@ public class FavouritesController : ControllerBase
     }
 
     [HttpGet]
+    [Route("getFavourites")]
     public async Task<ActionResult<IEnumerable<GetFavouritesDto>>> GetFavourites()
     {
         var results = await _mediator.Send(new GetFavouritesQuery());
