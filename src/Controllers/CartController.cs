@@ -3,6 +3,8 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Cart.Commands.AddToCart;
 using ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
+using ScriptShoesCQRS.Features.Cart.Commands.Queries.GetItemsFromCart;
+using ScriptShoesCQRS.Models.Cart;
 
 namespace ScriptShoesCQRS.Controllers;
 
@@ -40,5 +42,13 @@ public class CartController : ControllerBase
         });
 
         return NoContent();
+    }
+
+    [HttpGet]
+    [Route("getItemsFromCart")]
+    public async Task<ActionResult<IEnumerable<GetItemsFromCartDto>>> GetItemsFromCart()
+    {
+        var result = await _mediator.Send(new GetItemsFromCartQuery());
+        return Ok(result);
     }
 }
