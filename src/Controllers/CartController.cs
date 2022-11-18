@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Cart.Commands.AddToCart;
+using ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
 
 namespace ScriptShoesCQRS.Controllers;
 
@@ -18,10 +19,22 @@ public class CartController : ControllerBase
     }
 
     [HttpPost]
-    [Route("addToCart")]
+    [Route("addToCart/{shoeId:int}")]
     public async Task<ActionResult> AddToCart([FromRoute] int shoeId)
     {
         await _mediator.Send(new AddToCartCommand()
+        {
+            ShoeId = shoeId
+        });
+
+        return NoContent();
+    }
+
+    [HttpDelete]
+    [Route("removeItemFromCart/{shoeId:int}")]
+    public async Task<ActionResult> RemoveItemFromCart([FromRoute] int shoeId)
+    {
+        await _mediator.Send(new RemoveItemFromCartCommand()
         {
             ShoeId = shoeId
         });
