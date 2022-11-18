@@ -267,25 +267,6 @@ namespace ScriptShoesCQRS.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("ScriptShoesCQRS.Database.Entities.Cart", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<int>("ShoeId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Carts");
-                });
-
             modelBuilder.Entity("ScriptShoesCQRS.Database.Entities.ReviewsLikes", b =>
                 {
                     b.Property<int>("Id")

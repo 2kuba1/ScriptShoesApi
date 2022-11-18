@@ -19,7 +19,6 @@ public class AppDbContext : DbContext
     public DbSet<ShoeSizes> ShoeSizes { get; set; }
     public DbSet<Reviews> Reviews { get; set; }
     public DbSet<ReviewsLikes> ReviewsLikes { get; set; }
-    public DbSet<Cart> Carts { get; set; }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Roles>()
