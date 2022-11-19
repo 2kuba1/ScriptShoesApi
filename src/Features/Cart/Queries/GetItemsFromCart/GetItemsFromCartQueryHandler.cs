@@ -6,7 +6,7 @@ using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Models.Cart;
 using ScriptShoesCQRS.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Cart.Commands.Queries.GetItemsFromCart;
+namespace ScriptShoesCQRS.Features.Cart.Queries.GetItemsFromCart;
 
 public class GetItemsFromCartQueryHandler : IRequestHandler<GetItemsFromCartQuery, IEnumerable<GetItemsFromCartDto>>
 {

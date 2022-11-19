@@ -91,6 +91,17 @@ builder.Services.AddAuthentication(options =>
         ClockSkew = TimeSpan.Zero
     };
 });
+
+builder.Services.AddCors(setup =>
+{
+    setup.AddPolicy("ui", builder =>
+    {
+        builder.AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin();
+    });
+});
+
 builder.Services.AddHttpContextAccessor();
 
 builder.Services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
@@ -111,6 +122,7 @@ builder.Services.AddScoped<IValidator<UpdateReviewDto>, UpdateReviewCommandValid
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
+app.UseCors("ui");
 app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptShoes API"); });

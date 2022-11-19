@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ScriptShoesCQRS.Features.Cart.Commands.AddToCart;
 using ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
-using ScriptShoesCQRS.Features.Cart.Commands.Queries.GetItemsFromCart;
+using ScriptShoesCQRS.Features.Cart.Queries.GetItemsFromCart;
 using ScriptShoesCQRS.Models.Cart;
 
 namespace ScriptShoesCQRS.Controllers;
