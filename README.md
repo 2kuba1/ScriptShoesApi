@@ -4,7 +4,7 @@
 
 Monolith + CQRS api which has basic e-commerce shop features.
 
-The project was created to practice your skills in ASP.NET Core.
+The project was created to practice my skills in ASP.NET Core.
 
 ## Technologies
 
