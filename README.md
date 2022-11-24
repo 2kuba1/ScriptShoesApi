@@ -11,7 +11,7 @@ The project was created to practice my skills in ASP.NET Core.
  * ASP.NET Core 6.0
  * MediatR
  * Entity Framework Core 6
- * JWT Bearer Authenitacion and Authorization
+ * JWT.NET
  * BCrypt
  * AutoMapper
  * FluentValidation
@@ -22,7 +22,7 @@ The project was created to practice my skills in ASP.NET Core.
  
 ![database](https://user-images.githubusercontent.com/71401593/203863876-f59daad3-7268-4935-a144-4987a4eca96b.png)
 
-## Main feautes:
+## Main features:
 
 ### Cart
  *  Add items to cart
@@ -32,12 +32,12 @@ The project was created to practice my skills in ASP.NET Core.
 ### Admin Panel
  * Add shoe to store
  * Add shoe image
- *  Add shoe main image
- *  Delte shoe
- *  Update shoe
- *  Update image
- *  Update main image
- *  Update shoe
+ * Add shoe main image
+ * Delte shoe
+ * Update shoe
+ * Update image
+ * Update main image
+ * Update shoe
  
 ### Reviews:
  *  Add like to review
