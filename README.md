@@ -18,6 +18,9 @@ The project was created to practice your skills in ASP.NET Core.
  * MailKit
  * MS SQL
  
+ ## Database
+ 
+![database](https://user-images.githubusercontent.com/71401593/203863876-f59daad3-7268-4935-a144-4987a4eca96b.png)
 
 ## Main feautes:
 
