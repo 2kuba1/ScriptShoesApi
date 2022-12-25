@@ -16,7 +16,7 @@ The project was created to practice my skills in ASP.NET Core.
  * AutoMapper
  * FluentValidation
  * MailKit
- * MS SQL
+ * Microsoft SQL Server
  
  ## Database
  
