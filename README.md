@@ -8,9 +8,9 @@ The project was created to practice my skills in ASP.NET Core.
 
 ## Technologies
 
- * ASP.NET Core 6.0
+ * ASP.NET Core 7
  * MediatR
- * Entity Framework Core 6
+ * Entity Framework Core 7
  * JWT.NET
  * BCrypt
  * AutoMapper
