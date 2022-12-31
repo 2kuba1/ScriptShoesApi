@@ -48,11 +48,22 @@ public class DeleteShoeCommandHandler : IRequestHandler<DeleteShoeCommand, Unit>
         var rootPath = Directory.GetCurrentDirectory();
         var fullMainImgPath = $"{rootPath}/wwwroot/MainImages/";
 
+<<<<<<< HEAD
         var pathWithMainImgFile = fullMainImgPath + mainImage.ImageName;
         
         if (!File.Exists(pathWithMainImgFile)) return Unit.Value;
         
         File.Delete(pathWithMainImgFile);
+=======
+        if (mainImage is not null)
+        {
+            var pathWithMainImgFile = fullMainImgPath + mainImage.ImageName;
+            
+            if (!File.Exists(pathWithMainImgFile)) return Unit.Value;
+        
+            File.Delete(pathWithMainImgFile);
+        }
+>>>>>>> NET7
 
         var imagesList = _dbContext.Images.Where(i => i.ShoesId == shoe.Id).ToList();
 

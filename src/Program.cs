@@ -126,7 +126,11 @@ app.UseCors("ui");
 app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptShoes API"); });
+<<<<<<< HEAD
 app.UseMiddleware<ErrorHandlingMiddleWare>();
+=======
+//app.UseMiddleware<ErrorHandlingMiddleWare>();
+>>>>>>> NET7
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
