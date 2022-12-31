@@ -129,6 +129,8 @@ app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptSho
 app.UseMiddleware<ErrorHandlingMiddleWare>();
 //app.UseMiddleware<ErrorHandlingMiddleWare>();
 
+app.UseMiddleware<ErrorHandlingMiddleWare>();
+
 app.UseHttpsRedirection();
 
 app.UseAuthentication();
