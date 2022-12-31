@@ -129,7 +129,7 @@ app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptSho
 <<<<<<< HEAD
 app.UseMiddleware<ErrorHandlingMiddleWare>();
 =======
-//app.UseMiddleware<ErrorHandlingMiddleWare>();
+app.UseMiddleware<ErrorHandlingMiddleWare>();
 >>>>>>> NET7
 app.UseHttpsRedirection();
 
