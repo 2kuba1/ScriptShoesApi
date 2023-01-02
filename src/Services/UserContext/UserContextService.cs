@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace ScriptShoesCQRS.Services.UserContext;
+namespace ScriptShoesAPI.Services.UserContext;
 
 public class UserContextService : IUserContextService
 {

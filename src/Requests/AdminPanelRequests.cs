@@ -1,13 +1,13 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoesAPI.Features.AdminPanel.Commands.AddShoe;
+using ScriptShoesAPI.Features.AdminPanel.Commands.AddShoeImage;
+using ScriptShoesAPI.Features.AdminPanel.Commands.AddShoeMainImage;
+using ScriptShoesAPI.Features.AdminPanel.Commands.DeleteShoe;
+using ScriptShoesAPI.Features.AdminPanel.Commands.UpdateImage;
+using ScriptShoesAPI.Features.AdminPanel.Commands.UpdateMainImg;
 using ScriptShoesAPI.Validators;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.DeleteShoe;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateImage;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateMainImg;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
 namespace ScriptShoesAPI.Requests;

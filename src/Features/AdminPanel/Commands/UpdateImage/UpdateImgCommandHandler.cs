@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.DiscordLogger;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.DiscordLogger;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateImage;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.UpdateImage;
 
 public class UpdateImgCommandHandler : IRequestHandler<UpdateImgCommand, Unit>
 {

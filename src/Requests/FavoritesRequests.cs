@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoesCQRS.Features.Favourites.Commands.AddToFavourites;
-using ScriptShoesCQRS.Features.Favourites.Commands.RemoveShoeFromFavourites;
-using ScriptShoesCQRS.Features.Favourites.Queries.GetFavourites;
-using ScriptShoesCQRS.Models.Favourites;
+using ScriptShoesAPI.Features.Favourites.Commands.AddToFavourites;
+using ScriptShoesAPI.Features.Favourites.Commands.RemoveShoeFromFavourites;
+using ScriptShoesAPI.Features.Favourites.Queries.GetFavourites;
+using ScriptShoesAPI.Models.Favourites;
 
 namespace ScriptShoesAPI.Requests;
 

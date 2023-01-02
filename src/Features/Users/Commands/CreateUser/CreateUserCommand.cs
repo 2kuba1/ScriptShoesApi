@@ -1,7 +1,6 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+namespace ScriptShoesAPI.Features.Users.Commands.CreateUser;
 
 public record CreateUserCommand : IRequest
 {

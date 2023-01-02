@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesApi.Entities
+﻿namespace ScriptShoesAPI.Database.Entities
 {
     public class User
     {

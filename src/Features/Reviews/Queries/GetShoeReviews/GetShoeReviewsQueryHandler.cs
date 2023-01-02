@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Reviews;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries.GetShoeReviews;
+namespace ScriptShoesAPI.Features.Reviews.Queries.GetShoeReviews;
 
 public class GetShoeReviewsQueryHandler : IRequestHandler<GetShoeReviewsQuery, IEnumerable<ReviewsDto>>
 {

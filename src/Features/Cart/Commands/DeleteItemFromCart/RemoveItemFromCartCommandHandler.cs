@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
+namespace ScriptShoesAPI.Features.Cart.Commands.DeleteItemFromCart;
 
 public class RemoveItemFromCartCommandHandler : IRequestHandler<RemoveItemFromCartCommand, Unit>
 {

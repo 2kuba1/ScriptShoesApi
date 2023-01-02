@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using ScriptShoesAPI.Models.Favourites;
 using ScriptShoesCQRS.Database.Entities;
-using ScriptShoesCQRS.Models.Favourites;
 
-namespace ScriptShoesCQRS.MapProfiles;
+namespace ScriptShoesAPI.MapProfiles;
 
 public class FavouritesMappingProfile : Profile
 {

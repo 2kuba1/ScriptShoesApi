@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Reviews;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Models.Reviews;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
+namespace ScriptShoesAPI.Features.Reviews.Commands.UpdateReview;
 
 public class UpdateReviewCommandHandler : IRequestHandler<UpdateReviewCommand, ReviewsDto>
 {

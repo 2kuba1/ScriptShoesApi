@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateImage;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.UpdateImage;
 
 public record UpdateImgCommand : IRequest
 {

@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
 using MediatR;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.DiscordLogger;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Services.DiscordLogger;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.AddShoe;
 
 public class AddShoeCommandHandler : IRequestHandler<AddShoeCommand,int>
 {
@@ -24,7 +24,7 @@ public class AddShoeCommandHandler : IRequestHandler<AddShoeCommand,int>
     
     public async Task<int> Handle(AddShoeCommand request, CancellationToken cancellationToken)
     {
-        var shoe = _mapper.Map<Database.Entities.Shoes>(request);
+        var shoe = _mapper.Map<ScriptShoesCQRS.Database.Entities.Shoes>(request);
         shoe.CreatedBy = _contextService.GetUserId.Value;
 
         shoe.Name = shoe.Name.ToLower();

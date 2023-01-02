@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Models.Users;
+﻿namespace ScriptShoesAPI.Models.Users;
 
 public class RefreshToken
 {

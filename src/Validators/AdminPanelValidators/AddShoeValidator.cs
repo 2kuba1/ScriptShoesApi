@@ -1,6 +1,7 @@
 ﻿using FluentValidation;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 
 namespace ScriptShoesAPI.Validators.AdminPanelValidators;
 

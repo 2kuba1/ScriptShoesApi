@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
+namespace ScriptShoesAPI.Features.Users.Commands.VerifyEmail;
 
 public class VerifyEmailCodeHandlerCommand : IRequestHandler<VerifyEmailCode, Unit>
 {

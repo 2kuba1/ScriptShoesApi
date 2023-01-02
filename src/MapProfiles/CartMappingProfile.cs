@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
+using ScriptShoesAPI.Models.Cart;
 using ScriptShoesCQRS.Database.Entities;
-using ScriptShoesCQRS.Models.Cart;
 
-namespace ScriptShoesCQRS.MapProfiles;
+namespace ScriptShoesAPI.MapProfiles;
 
 public class CartMappingProfile : Profile
 {

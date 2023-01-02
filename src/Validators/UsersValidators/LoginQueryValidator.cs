@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ScriptShoesCQRS.Features.Users.Queries.Login;
+using ScriptShoesAPI.Features.Users.Queries.Login;
 
 namespace ScriptShoesAPI.Validators.UsersValidators;
 

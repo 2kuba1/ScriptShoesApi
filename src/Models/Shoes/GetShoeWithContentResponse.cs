@@ -1,6 +1,6 @@
-﻿using ScriptShoesCQRS.Models.Reviews;
+﻿using ScriptShoesAPI.Models.Reviews;
 
-namespace ScriptShoesCQRS.Models.Shoes;
+namespace ScriptShoesAPI.Models.Shoes;
 
 public class GetShoeWithContentResponse
 {

@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
 using MediatR;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Database;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+namespace ScriptShoesAPI.Features.Users.Commands.CreateUser;
 
 public class CreateUserHandler : IRequestHandler<CreateUserCommand, Unit>
 {

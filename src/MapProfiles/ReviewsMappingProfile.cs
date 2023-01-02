@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
-using ScriptShoesCQRS.Models.Reviews;
+using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Features.Reviews.Commands.UpdateReview;
+using ScriptShoesAPI.Models.Reviews;
 
-namespace ScriptShoesCQRS.MapProfiles;
+namespace ScriptShoesAPI.MapProfiles;
 
 public class ReviewsMappingProfile : Profile
 {

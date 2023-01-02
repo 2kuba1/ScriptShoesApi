@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using ScriptShoesCQRS.Models.Reviews;
+using ScriptShoesAPI.Models.Reviews;
 
 namespace ScriptShoesAPI.Validators.ReviewsValidators;
 

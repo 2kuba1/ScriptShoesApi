@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries.GetLikedReviews;
+namespace ScriptShoesAPI.Features.Reviews.Queries.GetLikedReviews;
 
 public class GetLikedReviewsQueryHandler : IRequestHandler<GetLikedReviewsQuery, IEnumerable<int>>
 {

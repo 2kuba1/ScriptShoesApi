@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
+namespace ScriptShoesAPI.Features.Users.Commands.SendEmailWithActivationCode;
 
 public record SendEmailWithActivationCodeCommand : IRequest
 {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Shoes;
+using ScriptShoesAPI.Models.Shoes;
 
-namespace ScriptShoesCQRS.Features.Shoes.Queries.GetShoeWithContent;
+namespace ScriptShoesAPI.Features.Shoes.Queries.GetshoeWithContent;
 
 public record GetShoeWithContentQuery : IRequest<GetShoeWithContentResponse>
 {

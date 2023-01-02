@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.DeleteProfilePicture;
+namespace ScriptShoesAPI.Features.Users.Commands.DeleteProfilePicture;
 
 public record DeleteProfilePictureCommand : IRequest
 {

@@ -1,11 +1,12 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
+using ScriptShoesAPI.Services.UserContext;
 using ScriptShoesCQRS.Database.Entities;
-using ScriptShoesCQRS.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.AddLikeToReview;
+namespace ScriptShoesAPI.Features.Reviews.Commands.AddLikeToReview;
 
 public class AddLikeToReviewCommandHandler : IRequestHandler<AddLikeToReviewCommand, Unit>
 {

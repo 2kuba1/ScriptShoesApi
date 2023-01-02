@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.RemoveLike;
+namespace ScriptShoesAPI.Features.Reviews.Commands.RemoveLike;
 
 public record RemoveLikeCommand : IRequest
 {

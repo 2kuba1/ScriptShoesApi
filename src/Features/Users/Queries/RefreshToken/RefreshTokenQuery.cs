@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Users;
+using ScriptShoesAPI.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
+namespace ScriptShoesAPI.Features.Users.Queries.RefreshToken;
 
 public record RefreshTokenQuery : IRequest<AuthenticationUserResponse>
 {

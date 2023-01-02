@@ -1,7 +1,7 @@
 ﻿using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Services.DiscordLogger;
+using ScriptShoesAPI.Services.DiscordLogger;
 
-namespace ScriptShoesCQRS.Middleware;
+namespace ScriptShoesAPI.Middleware;
 
 public class ErrorHandlingMiddleWare : IMiddleware 
 {

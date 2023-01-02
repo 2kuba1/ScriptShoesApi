@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.AddProfilePicture;
+namespace ScriptShoesAPI.Features.Users.Commands.AddProfilePicture;
 
 public record AddProfilePictureCommand : IRequest
 {

@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Favourites.Commands.RemoveShoeFromFavourites;
+namespace ScriptShoesAPI.Features.Favourites.Commands.RemoveShoeFromFavourites;
 
 public record RemoveShoeFromFavouritesCommand : IRequest
 {

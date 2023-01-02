@@ -1,4 +1,4 @@
-﻿using ScriptShoesApi.Entities;
+﻿using ScriptShoesAPI.Database.Entities;
 
 namespace ScriptShoesCQRS.Database.Entities;
 

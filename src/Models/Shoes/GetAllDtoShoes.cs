@@ -1,6 +1,6 @@
-﻿using ScriptShoesApi.Entities;
+﻿using ScriptShoesAPI.Database.Entities;
 
-namespace ScriptShoesCQRS.Models.Shoes;
+namespace ScriptShoesAPI.Models.Shoes;
 
 public class GetAllShoesDto
 {
@@ -13,7 +13,7 @@ public class GetAllShoesDto
     public string ShoeType { get; set; }
 
     public virtual List<ShoeSizes>? Sizes { get; set; }
-    public virtual List<ScriptShoesApi.Entities.Reviews>? Reviews { get; set; }
+    public virtual List<Database.Entities.Reviews>? Reviews { get; set; }
     public virtual List<Images>? Images { get; set; }
     public virtual List<MainImages> MainImages { get; set; }
 }

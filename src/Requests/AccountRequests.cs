@@ -1,16 +1,16 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoesAPI.Features.Users.Commands.AddProfilePicture;
+using ScriptShoesAPI.Features.Users.Commands.CreateUser;
+using ScriptShoesAPI.Features.Users.Commands.DeleteProfilePicture;
+using ScriptShoesAPI.Features.Users.Commands.SendEmailWithActivationCode;
+using ScriptShoesAPI.Features.Users.Commands.VerifyEmail;
+using ScriptShoesAPI.Features.Users.Queries.Login;
+using ScriptShoesAPI.Features.Users.Queries.RefreshToken;
+using ScriptShoesAPI.Models.Users;
 using ScriptShoesAPI.Validators;
 using ScriptShoesAPI.Validators.UsersValidators;
-using ScriptShoesCQRS.Features.Users.Commands.AddProfilePicture;
-using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
-using ScriptShoesCQRS.Features.Users.Commands.DeleteProfilePicture;
-using ScriptShoesCQRS.Features.Users.Commands.SendEmailWithActivationCode;
-using ScriptShoesCQRS.Features.Users.Commands.VerifyEmail;
-using ScriptShoesCQRS.Features.Users.Queries.Login;
-using ScriptShoesCQRS.Features.Users.Queries.RefreshToken;
-using ScriptShoesCQRS.Models.Users;
 
 namespace ScriptShoesAPI.Requests;
 

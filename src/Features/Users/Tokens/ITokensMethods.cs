@@ -1,7 +1,7 @@
-﻿using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Models.Users;
+﻿using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Tokens;
+namespace ScriptShoesAPI.Features.Users.Tokens;
 
 public interface ITokensMethods
 {

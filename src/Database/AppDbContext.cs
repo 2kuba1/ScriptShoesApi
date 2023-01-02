@@ -1,9 +1,8 @@
-﻿using System.Net;
-using Microsoft.EntityFrameworkCore;
-using ScriptShoesApi.Entities;
+﻿using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database.Entities;
 using ScriptShoesCQRS.Database.Entities;
 
-namespace ScriptShoesCQRS.Database;
+namespace ScriptShoesAPI.Database;
 
 public class AppDbContext : DbContext
 {

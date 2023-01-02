@@ -1,9 +1,9 @@
 ﻿using MediatR;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries.GetAvailableReviews;
+namespace ScriptShoesAPI.Features.Reviews.Queries.GetAvailableReviews;
 
 public class GetAvailableReviewsQueryHandler : IRequestHandler<GetAvailableReviewsQuery, IEnumerable<int>>
 {

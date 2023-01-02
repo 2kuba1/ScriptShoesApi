@@ -1,13 +1,13 @@
 ﻿using System.Security.Cryptography;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
-using ScriptShoesApi.Entities;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.EmailSender;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.EmailSender;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Users.Commands.SendEmailWithNewActivationCode;
+namespace ScriptShoesAPI.Features.Users.Commands.SendEmailWithNewActivationCode;
 
 public class SendEmailWithNewActivationCodeCommandHandler : IRequestHandler<SendEmailWithNewActivationCodeCommand, Unit>
 {

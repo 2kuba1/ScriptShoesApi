@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Models.Shoes;
+﻿namespace ScriptShoesAPI.Models.Shoes;
 
 public class GetFiltersDto
 {

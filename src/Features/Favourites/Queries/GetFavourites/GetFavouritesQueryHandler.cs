@@ -1,13 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Favourites;
-using ScriptShoesCQRS.Models.Shoes;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Models.Favourites;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Favourites.Queries.GetFavourites;
+namespace ScriptShoesAPI.Features.Favourites.Queries.GetFavourites;
 
 public class GetFavouritesQueryHandler : IRequestHandler<GetFavouritesQuery, IEnumerable<GetFavouritesDto>>
 {
@@ -27,7 +26,7 @@ public class GetFavouritesQueryHandler : IRequestHandler<GetFavouritesQuery, IEn
         var userFavourites = _dbContext.Favorites.Where(r => r.UserId == _contextService.GetUserId.Value)
             .Select(f => f.ShoesId).ToList();
 
-        var shoesToAdd = new List<Database.Entities.Shoes>();
+        var shoesToAdd = new List<ScriptShoesCQRS.Database.Entities.Shoes>();
 
         for (int i = 0; i < userFavourites.Count; i++)
         {

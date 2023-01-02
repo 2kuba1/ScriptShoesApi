@@ -3,11 +3,11 @@ using System.Security.Claims;
 using System.Security.Cryptography;
 using System.Text;
 using Microsoft.IdentityModel.Tokens;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Users;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Tokens;
+namespace ScriptShoesAPI.Features.Users.Tokens;
 
 public class TokensMethods : ITokensMethods
 {

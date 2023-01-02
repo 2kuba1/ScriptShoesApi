@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Cart.Commands.AddToCart;
+namespace ScriptShoesAPI.Features.Cart.Commands.AddToCart;
 
 public record AddToCartCommand : IRequest
 {

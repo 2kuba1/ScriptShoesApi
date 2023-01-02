@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.AddShoeMainImage;
 
 public record AddShoeMainImageCommand : IRequest
 {

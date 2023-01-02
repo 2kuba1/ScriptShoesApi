@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Features.Users.Tokens;
-using ScriptShoesCQRS.Models.Users;
+using ScriptShoesAPI.Features.Users.Tokens;
+using ScriptShoesAPI.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Queries.Login;
+namespace ScriptShoesAPI.Features.Users.Queries.Login;
 
 public class LoginQueryHandler : IRequestHandler<LoginQuery, AuthenticationUserResponse>
 {

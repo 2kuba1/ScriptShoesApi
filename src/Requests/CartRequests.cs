@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoesCQRS.Features.Cart.Commands.AddToCart;
-using ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
-using ScriptShoesCQRS.Features.Cart.Queries.GetItemsFromCart;
-using ScriptShoesCQRS.Models.Cart;
+using ScriptShoesAPI.Features.Cart.Commands.AddToCart;
+using ScriptShoesAPI.Features.Cart.Commands.DeleteItemFromCart;
+using ScriptShoesAPI.Features.Cart.Queries.GetItemsFromCart;
+using ScriptShoesAPI.Models.Cart;
 
 namespace ScriptShoesAPI.Requests;
 

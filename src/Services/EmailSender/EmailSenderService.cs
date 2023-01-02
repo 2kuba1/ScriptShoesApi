@@ -3,7 +3,7 @@ using MailKit.Security;
 using MimeKit;
 using MimeKit.Text;
 
-namespace ScriptShoesCQRS.Services.EmailSender;
+namespace ScriptShoesAPI.Services.EmailSender;
 
 public class EmailSenderService : IEmailSenderService
 {

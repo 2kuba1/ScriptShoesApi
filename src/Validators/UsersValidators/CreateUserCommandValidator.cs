@@ -1,7 +1,8 @@
 ﻿using System.Text.RegularExpressions;
 using FluentValidation;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Features.Users.Commands.CreateUser;
 using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
 
 namespace ScriptShoesAPI.Validators.UsersValidators;
 

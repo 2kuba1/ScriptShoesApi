@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.DeleteReview;
+namespace ScriptShoesAPI.Features.Reviews.Commands.DeleteReview;
 
 public record DeleteReviewCommand : IRequest
 {

@@ -1,7 +1,7 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Favourites.Commands.AddToFavourites;
-
+namespace ScriptShoesAPI.Features.Favourites.Commands.AddToFavourites;
+    
 public record AddToFavouritesCommand : IRequest
 {
     public int ShoeId { get; set; }

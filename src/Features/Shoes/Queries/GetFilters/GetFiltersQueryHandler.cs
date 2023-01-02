@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Shoes;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Models.Shoes;
 
-namespace ScriptShoesCQRS.Features.Shoes.Queries.GetFilters;
+namespace ScriptShoesAPI.Features.Shoes.Queries.GetFilters;
 
 public class GetFiltersQueryHandler : IRequestHandler<GetFiltersQuery, GetFiltersDto>
 {

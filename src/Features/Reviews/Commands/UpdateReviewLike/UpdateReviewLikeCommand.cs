@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
+namespace ScriptShoesAPI.Features.Reviews.Commands.UpdateReviewLike;
 
 public record UpdateReviewLikeCommand : IRequest
 {

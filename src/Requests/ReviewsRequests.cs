@@ -1,17 +1,17 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ScriptShoesAPI.Features.Reviews.Commands.AddLikeToReview;
+using ScriptShoesAPI.Features.Reviews.Commands.CreateReview;
+using ScriptShoesAPI.Features.Reviews.Commands.DeleteReview;
+using ScriptShoesAPI.Features.Reviews.Commands.RemoveLike;
+using ScriptShoesAPI.Features.Reviews.Commands.UpdateReview;
+using ScriptShoesAPI.Features.Reviews.Commands.UpdateReviewLike;
+using ScriptShoesAPI.Features.Reviews.Queries.GetAvailableReviews;
+using ScriptShoesAPI.Features.Reviews.Queries.GetLikedReviews;
+using ScriptShoesAPI.Features.Reviews.Queries.GetShoeReviews;
+using ScriptShoesAPI.Models.Reviews;
 using ScriptShoesAPI.Validators;
-using ScriptShoesCQRS.Features.Reviews.Commands.AddLikeToReview;
-using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
-using ScriptShoesCQRS.Features.Reviews.Commands.DeleteReview;
-using ScriptShoesCQRS.Features.Reviews.Commands.RemoveLike;
-using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
-using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
-using ScriptShoesCQRS.Features.Reviews.Queries.GetAvailableReviews;
-using ScriptShoesCQRS.Features.Reviews.Queries.GetLikedReviews;
-using ScriptShoesCQRS.Features.Reviews.Queries.GetShoeReviews;
-using ScriptShoesCQRS.Models.Reviews;
 
 namespace ScriptShoesAPI.Requests;
 

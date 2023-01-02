@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries.GetAvailableReviews;
+namespace ScriptShoesAPI.Features.Reviews.Queries.GetAvailableReviews;
 
 public record GetAvailableReviewsQuery : IRequest<IEnumerable<int>>
 {

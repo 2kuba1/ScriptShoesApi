@@ -1,6 +1,6 @@
-﻿using ScriptShoesApi.Entities;
+﻿using ScriptShoesAPI.Database.Entities;
 
-namespace ScriptShoesCQRS.Models.Shoes;
+namespace ScriptShoesAPI.Models.Shoes;
 
 public class GetShoesByNameDto
 {

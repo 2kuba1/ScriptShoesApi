@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Features.Users.Commands.CreateUser;
+using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Features.Users.Commands.CreateUser;
 
-namespace ScriptShoesCQRS.MapProfiles;
+namespace ScriptShoesAPI.MapProfiles;
 
 public class UsersMappingProfile : Profile
 {

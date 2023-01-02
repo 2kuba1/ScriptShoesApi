@@ -1,6 +1,6 @@
 ﻿using DiscordMessenger;
 
-namespace ScriptShoesCQRS.Services.DiscordLogger;
+namespace ScriptShoesAPI.Services.DiscordLogger;
 
 
 public class DiscordLoggerService : IDiscordLoggerService

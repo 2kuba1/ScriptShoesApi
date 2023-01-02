@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Reviews;
+using ScriptShoesAPI.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.UpdateReview;
+namespace ScriptShoesAPI.Features.Reviews.Commands.UpdateReview;
 
 public record UpdateReviewCommand : IRequest<ReviewsDto>
 {

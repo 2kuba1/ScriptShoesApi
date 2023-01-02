@@ -1,6 +1,6 @@
-﻿using ScriptShoesApi.Entities;
+﻿using ScriptShoesAPI.Database.Entities;
 
-namespace ScriptShoesCQRS.Models.Cart;
+namespace ScriptShoesAPI.Models.Cart;
 
 public class GetItemsFromCartDto
 {

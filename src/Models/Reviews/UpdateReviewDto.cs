@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Models.Reviews;
+﻿namespace ScriptShoesAPI.Models.Reviews;
 
 public class UpdateReviewDto
 {

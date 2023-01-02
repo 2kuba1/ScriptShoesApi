@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Reviews;
-using ScriptShoesCQRS.Models.Shoes;
+using ScriptShoesAPI.Models.Reviews;
+using ScriptShoesAPI.Models.Shoes;
 
-namespace ScriptShoesCQRS.Features.Shoes.Queries.GetShoeWithContent;
+namespace ScriptShoesAPI.Features.Shoes.Queries.GetshoeWithContent;
 
 public class GetShoeWithContentQueryHandler : IRequestHandler<GetShoeWithContentQuery, GetShoeWithContentResponse>
 {

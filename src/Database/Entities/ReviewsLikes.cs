@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Database.Entities;
+﻿namespace ScriptShoesAPI.Database.Entities;
 
 public class ReviewsLikes
 {

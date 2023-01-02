@@ -1,9 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-using FluentValidation;
+﻿using FluentValidation;
 using MediatR;
 using ValidationException = FluentValidation.ValidationException;
 
-namespace ScriptShoesCQRS.PipelineBehaviors;
+namespace ScriptShoesAPI.PipelineBehaviors;
 
 public class ValidationBehavior<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse> 
     where TRequest : IRequest<TResponse>

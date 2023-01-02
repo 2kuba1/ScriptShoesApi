@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using ScriptShoesApi.Entities;
+using ScriptShoesAPI.Database.Entities;
+using ScriptShoesAPI.Features.AdminPanel.Commands.AddShoe;
+using ScriptShoesAPI.Models.Reviews;
+using ScriptShoesAPI.Models.Shoes;
 using ScriptShoesCQRS.Database.Entities;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
-using ScriptShoesCQRS.Models.Reviews;
-using ScriptShoesCQRS.Models.Shoes;
 
-namespace ScriptShoesCQRS.MapProfiles;
+namespace ScriptShoesAPI.MapProfiles;
 
 public class ShoesMappingProfile : Profile
 {

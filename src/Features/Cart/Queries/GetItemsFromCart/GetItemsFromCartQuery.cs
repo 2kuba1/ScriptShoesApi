@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Cart;
+using ScriptShoesAPI.Models.Cart;
 
-namespace ScriptShoesCQRS.Features.Cart.Queries.GetItemsFromCart;
+namespace ScriptShoesAPI.Features.Cart.Queries.GetItemsFromCart;
 
 public record GetItemsFromCartQuery : IRequest<IEnumerable<GetItemsFromCartDto>>
 {

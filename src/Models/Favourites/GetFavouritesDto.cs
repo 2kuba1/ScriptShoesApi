@@ -1,6 +1,6 @@
-﻿using ScriptShoesApi.Entities;
+﻿using ScriptShoesAPI.Database.Entities;
 
-namespace ScriptShoesCQRS.Models.Favourites;
+namespace ScriptShoesAPI.Models.Favourites;
 
 public class GetFavouritesDto
 {

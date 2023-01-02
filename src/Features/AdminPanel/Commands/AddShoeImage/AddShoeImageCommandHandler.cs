@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
-using ScriptShoesApi.Entities;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.AddShoeImage;
 
 public class AddShoeImageCommandHandler : IRequestHandler<AddShoeImageCommand, Unit>
 {

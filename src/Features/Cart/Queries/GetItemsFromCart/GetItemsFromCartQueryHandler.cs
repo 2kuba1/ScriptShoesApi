@@ -1,12 +1,12 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Cart;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Models.Cart;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Cart.Queries.GetItemsFromCart;
+namespace ScriptShoesAPI.Features.Cart.Queries.GetItemsFromCart;
 
 public class GetItemsFromCartQueryHandler : IRequestHandler<GetItemsFromCartQuery, IEnumerable<GetItemsFromCartDto>>
 {
@@ -26,7 +26,7 @@ public class GetItemsFromCartQueryHandler : IRequestHandler<GetItemsFromCartQuer
         var getItems = _dbContext.Cart.Where(r => r.UserId == _contextService.GetUserId.Value)
             .Select(f => f.ShoesId).ToList();
 
-        var itemsList = new List<Database.Entities.Shoes>();
+        var itemsList = new List<ScriptShoesCQRS.Database.Entities.Shoes>();
 
         for (int i = 0; i < getItems.Count; i++)
         {

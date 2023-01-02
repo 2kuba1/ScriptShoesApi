@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Services.DiscordLogger;
+﻿namespace ScriptShoesAPI.Services.DiscordLogger;
 
 public interface IDiscordLoggerService
 {

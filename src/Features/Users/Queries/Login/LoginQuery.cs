@@ -1,7 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Models.Users;
+using ScriptShoesAPI.Models.Users;
 
-namespace ScriptShoesCQRS.Features.Users.Queries.Login;
+namespace ScriptShoesAPI.Features.Users.Queries.Login;
 
 public record LoginQuery : IRequest<AuthenticationUserResponse>
 {

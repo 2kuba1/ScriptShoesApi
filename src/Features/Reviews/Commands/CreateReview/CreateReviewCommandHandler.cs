@@ -1,13 +1,13 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.DiscordLogger;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.DiscordLogger;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
+namespace ScriptShoesAPI.Features.Reviews.Commands.CreateReview;
 
-public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, ScriptShoesApi.Entities.Reviews>
+public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, Database.Entities.Reviews>
 {
     private readonly AppDbContext _dbContext;
     private readonly IUserContextService _contextService;
@@ -20,7 +20,7 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, S
         _logger = logger;
     }
     
-    public async Task<ScriptShoesApi.Entities.Reviews> Handle(CreateReviewCommand request, CancellationToken cancellationToken)
+    public async Task<Database.Entities.Reviews> Handle(CreateReviewCommand request, CancellationToken cancellationToken)
     {
         var shoe = await _dbContext.Shoes.FirstOrDefaultAsync(s => s.Id == request.ShoeId, cancellationToken: cancellationToken);
 
@@ -29,7 +29,7 @@ public class CreateReviewCommandHandler : IRequestHandler<CreateReviewCommand, S
             throw new NotFoundException($"Shoe with id {request.ShoeId} not found");
         }
 
-        var newReview = new ScriptShoesApi.Entities.Reviews
+        var newReview = new Database.Entities.Reviews
         {
             Rate = request.Rate,
             Review = request.Review,

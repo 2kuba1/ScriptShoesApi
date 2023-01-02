@@ -1,6 +1,6 @@
 ﻿using MediatR;
 
-namespace ScriptShoesCQRS.Features.Cart.Commands.DeleteItemFromCart;
+namespace ScriptShoesAPI.Features.Cart.Commands.DeleteItemFromCart;
 
 public record RemoveItemFromCartCommand : IRequest
 {

@@ -1,11 +1,11 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.DiscordLogger;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.DiscordLogger;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.Commands.DeleteShoe;
+namespace ScriptShoesAPI.Features.AdminPanel.Commands.DeleteShoe;
 
 public class DeleteShoeCommandHandler : IRequestHandler<DeleteShoeCommand, Unit>
 {

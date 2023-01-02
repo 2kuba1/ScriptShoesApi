@@ -1,8 +1,7 @@
 ﻿using MediatR;
-using ScriptShoesApi.Entities;
-using ScriptShoesCQRS.Models.Favourites;
+using ScriptShoesAPI.Models.Favourites;
 
-namespace ScriptShoesCQRS.Features.Favourites.Queries.GetFavourites;
+namespace ScriptShoesAPI.Features.Favourites.Queries.GetFavourites;
 
 public record GetFavouritesQuery : IRequest<IEnumerable<GetFavouritesDto>>
 {

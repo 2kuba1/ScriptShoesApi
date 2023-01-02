@@ -1,8 +1,8 @@
 ﻿using MediatR;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Models.Reviews;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.Queries.GetReviewsStats;
+namespace ScriptShoesAPI.Features.Reviews.Queries.GetReviewsStats;
 
 public class GetReviewsStatsQueryHandler : IRequestHandler<GetReviewsStatsQuery, ReviewsStatsDto>
 {

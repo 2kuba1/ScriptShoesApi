@@ -1,10 +1,10 @@
 ﻿using MediatR;
-using ScriptShoesApi.Entities;
+using ScriptShoesAPI.Database;
+using ScriptShoesAPI.Database.Entities;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Favourites.Commands.AddToFavourites;
+namespace ScriptShoesAPI.Features.Favourites.Commands.AddToFavourites;
 
 public class AddToFavouritesCommandHandler : IRequestHandler<AddToFavouritesCommand, Unit>
 {

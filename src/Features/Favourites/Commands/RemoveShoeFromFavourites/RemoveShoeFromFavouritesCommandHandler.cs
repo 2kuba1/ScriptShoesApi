@@ -1,10 +1,10 @@
 ﻿using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ScriptShoesAPI.Database;
 using ScriptShoesApi.Exceptions;
-using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Services.UserContext;
+using ScriptShoesAPI.Services.UserContext;
 
-namespace ScriptShoesCQRS.Features.Favourites.Commands.RemoveShoeFromFavourites;
+namespace ScriptShoesAPI.Features.Favourites.Commands.RemoveShoeFromFavourites;
 
 public class RemoveShoeFromFavouritesCommandHandler : IRequestHandler<RemoveShoeFromFavouritesCommand, Unit>
 {

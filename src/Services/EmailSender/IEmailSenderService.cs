@@ -1,4 +1,4 @@
-﻿namespace ScriptShoesCQRS.Services.EmailSender;
+﻿namespace ScriptShoesAPI.Services.EmailSender;
 
 public interface IEmailSenderService
 {

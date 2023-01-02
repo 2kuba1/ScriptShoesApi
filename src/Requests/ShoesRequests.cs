@@ -1,10 +1,10 @@
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoesCQRS.Features.Shoes.Queries.GetAllShoes;
-using ScriptShoesCQRS.Features.Shoes.Queries.GetFilters;
-using ScriptShoesCQRS.Features.Shoes.Queries.GetShoesByName;
-using ScriptShoesCQRS.Features.Shoes.Queries.GetShoeWithContent;
-using ScriptShoesCQRS.Models.Shoes;
+using ScriptShoesAPI.Features.Shoes.Queries.GetAllShoes;
+using ScriptShoesAPI.Features.Shoes.Queries.GetFilters;
+using ScriptShoesAPI.Features.Shoes.Queries.GetShoesByName;
+using ScriptShoesAPI.Features.Shoes.Queries.GetshoeWithContent;
+using ScriptShoesAPI.Models.Shoes;
 
 namespace ScriptShoesAPI.Requests;
 
