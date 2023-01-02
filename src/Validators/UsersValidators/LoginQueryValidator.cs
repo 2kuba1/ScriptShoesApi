@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ScriptShoesCQRS.Features.Users.Queries.Login;
 
-namespace ScriptShoesCQRS.Features.Users.UsersValidators;
+namespace ScriptShoesAPI.Validators.UsersValidators;
 
 public class LoginQueryValidator : AbstractValidator<LoginQuery>
 {

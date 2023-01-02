@@ -1,17 +1,17 @@
 ﻿using FluentValidation;
 using ScriptShoesCQRS.Database;
-using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
+using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 
-namespace ScriptShoesCQRS.Features.AdminPanel.AdminPanelValidators;
+namespace ScriptShoesAPI.Validators.AdminPanelValidators;
 
-public class UpdateShoeValidator : AbstractValidator<UpdateShoeCommand>
+public class AddShoeValidator : AbstractValidator<AddShoeCommand>
 {
-    public UpdateShoeValidator(AppDbContext dbContext)
+    public AddShoeValidator(AppDbContext dbContext)
     {
         RuleFor(x => x.Brand)
             .NotEmpty();
 
-        RuleFor(x => x.NewName)
+        RuleFor(x => x.Name)
             .NotEmpty()
             .Custom((val, context) =>
             {

@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using ScriptShoesCQRS.Models.Reviews;
 
-namespace ScriptShoesCQRS.Features.Reviews.ReviewsValidators;
+namespace ScriptShoesAPI.Validators.ReviewsValidators;
 
 public class UpdateReviewCommandValidator : AbstractValidator<UpdateReviewDto>
 {

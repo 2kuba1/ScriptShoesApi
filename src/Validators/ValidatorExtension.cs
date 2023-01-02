@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace ScriptShoesAPI.Middleware;
+namespace ScriptShoesAPI.Validators;
 
 public static class ValidatorExtension
 {

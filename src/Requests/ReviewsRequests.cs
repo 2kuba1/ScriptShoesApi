@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoesAPI.Middleware;
+using ScriptShoesAPI.Validators;
 using ScriptShoesCQRS.Features.Reviews.Commands.AddLikeToReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.CreateReview;
 using ScriptShoesCQRS.Features.Reviews.Commands.DeleteReview;
@@ -11,7 +11,6 @@ using ScriptShoesCQRS.Features.Reviews.Commands.UpdateReviewLike;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetAvailableReviews;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetLikedReviews;
 using ScriptShoesCQRS.Features.Reviews.Queries.GetShoeReviews;
-using ScriptShoesCQRS.Features.Reviews.ReviewsValidators;
 using ScriptShoesCQRS.Models.Reviews;
 
 namespace ScriptShoesAPI.Requests;

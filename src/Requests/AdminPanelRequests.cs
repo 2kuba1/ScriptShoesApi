@@ -1,7 +1,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using ScriptShoesAPI.Middleware;
+using ScriptShoesAPI.Validators;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeImage;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoeMainImage;
