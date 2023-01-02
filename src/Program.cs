@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using ScriptShoesAPI.Requests;
 using ScriptShoesCQRS.Database;
 using ScriptShoesCQRS.Features.AdminPanel.AdminPanelValidators;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.AddShoe;
@@ -36,7 +37,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
 builder.Services.AddDbContext<AppDbContext>(config  =>
 {
-    config.UseSqlServer(builder.Configuration.GetValue<string>("ConnectionStrings:connectionString"));
+    var connectionString = builder.Configuration.GetValue<string>("ConnectionStrings:connectionString");
+    config.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString));
 });
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
@@ -96,7 +98,8 @@ builder.Services.AddCors(setup =>
 {
     setup.AddPolicy("ui", builder =>
     {
-        builder.AllowAnyHeader()
+        builder
+            .AllowAnyHeader()
             .AllowAnyMethod()
             .AllowAnyOrigin();
     });
@@ -126,10 +129,7 @@ app.UseCors("ui");
 app.UseStaticFiles();
 app.UseSwagger();
 app.UseSwaggerUI(c => { c.SwaggerEndpoint("/swagger/v1/swagger.json", "ScriptShoes API"); });
-app.UseMiddleware<ErrorHandlingMiddleWare>();
 //app.UseMiddleware<ErrorHandlingMiddleWare>();
-
-app.UseMiddleware<ErrorHandlingMiddleWare>();
 
 app.UseHttpsRedirection();
 
@@ -137,5 +137,12 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.RegisterAccountEndpoints();
+app.RegisterAdminPanelEndpoints();
+app.RegisterCartEndpoints();
+app.RegisterReviewsEndpoints();
+app.RegisterFavoritesEndpoints();
+app.RegisterShoesEndpoints();
 
 app.Run();

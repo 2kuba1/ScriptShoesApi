@@ -1,5 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33205.214
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScriptShoesAPI", "ScriptShoesAPI.csproj", "{9D0F23F5-0043-4C04-9A3C-555CC4CE68BA}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{62CA5702-C075-465F-B37A-D2B1D75A0587}"
@@ -15,7 +18,13 @@ Global
 		{9D0F23F5-0043-4C04-9A3C-555CC4CE68BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9D0F23F5-0043-4C04-9A3C-555CC4CE68BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{9D0F23F5-0043-4C04-9A3C-555CC4CE68BA} = {62CA5702-C075-465F-B37A-D2B1D75A0587}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1AEC72EF-B6FD-4161-8598-8CF8FA3E9F25}
 	EndGlobalSection
 EndGlobal

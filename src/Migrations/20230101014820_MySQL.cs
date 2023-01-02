@@ -1,81 +1,136 @@
 ﻿using System;
+using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace ScriptShoesCQRS.Migrations
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace ScriptShoesAPI.Migrations
 {
-    public partial class Init : Migration
+    /// <inheritdoc />
+    public partial class MySQL : Migration
     {
+        /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "Cart",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ShoesId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Cart", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "EmailCodes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    GeneratedCode = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    CodeCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CodeExpires = table.Column<DateTime>(type: "datetime2", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    GeneratedCode = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    CodeCreated = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    CodeExpires = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_EmailCodes", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ReviewsLikes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    UserId = table.Column<int>(type: "int", nullable: false),
+                    ShoesId = table.Column<int>(type: "int", nullable: false),
+                    ReviewId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ReviewsLikes", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Roles",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Roles", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Shoes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    PreviousPrice = table.Column<float>(type: "real", nullable: true),
-                    CurrentPrice = table.Column<double>(type: "float", nullable: false),
-                    AverageRating = table.Column<double>(type: "float", nullable: true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    PreviousPrice = table.Column<float>(type: "float", nullable: true),
+                    CurrentPrice = table.Column<double>(type: "double", nullable: false),
+                    AverageRating = table.Column<double>(type: "double", nullable: true),
                     CreatedBy = table.Column<int>(type: "int", nullable: true),
-                    Brand = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Brand = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ReviewsNum = table.Column<int>(type: "int", nullable: true),
-                    ShoeType = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    SizesList = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                    ShoeType = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    SizesList = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Shoes", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Users",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    HashedPassword = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Email = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    AvailableFounds = table.Column<double>(type: "float", nullable: false),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Surname = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    IsActivated = table.Column<bool>(type: "bit", nullable: false),
-                    RefreshToken = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    ProfilePictureUrl = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    TokenCreated = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    TokenExpires = table.Column<DateTime>(type: "datetime2", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Username = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    HashedPassword = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Email = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    AvailableFounds = table.Column<double>(type: "double", nullable: false),
+                    Name = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Surname = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    IsActivated = table.Column<bool>(type: "tinyint(1)", nullable: false),
+                    RefreshToken = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ProfilePictureUrl = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    TokenCreated = table.Column<DateTime>(type: "datetime(6)", nullable: false),
+                    TokenExpires = table.Column<DateTime>(type: "datetime(6)", nullable: false),
                     RoleId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -87,14 +142,15 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Roles",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Favorites",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
                     UserId = table.Column<int>(type: "int", nullable: false),
                     ShoesId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -107,16 +163,19 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Shoes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Images",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Img = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImgName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Img = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ImgName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ShoesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -128,16 +187,19 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Shoes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "MainImages",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    MainImg = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ImageName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    MainImg = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    ImageName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ShoesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -149,15 +211,17 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Shoes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "ShoeSizes",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Sizes = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Sizes = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ShoesId = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
@@ -169,19 +233,23 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Shoes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Reviews",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Username = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Review = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Username = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Review = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     Rate = table.Column<int>(type: "int", nullable: false),
                     ReviewLikes = table.Column<int>(type: "int", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Title = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ShoesId = table.Column<int>(type: "int", nullable: false),
                     UserId = table.Column<int>(type: "int", nullable: false)
                 },
@@ -200,17 +268,17 @@ namespace ScriptShoesCQRS.Migrations
                         principalTable: "Users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Cascade);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.InsertData(
+                table: "Roles",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "User" },
+                    { 2, "Admin" }
                 });
-
-            migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 1, "User" });
-
-            migrationBuilder.InsertData(
-                table: "Roles",
-                columns: new[] { "Id", "Name" },
-                values: new object[] { 2, "Admin" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_Favorites_ShoesId",
@@ -248,8 +316,12 @@ namespace ScriptShoesCQRS.Migrations
                 column: "RoleId");
         }
 
+        /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Cart");
+
             migrationBuilder.DropTable(
                 name: "EmailCodes");
 
@@ -264,6 +336,9 @@ namespace ScriptShoesCQRS.Migrations
 
             migrationBuilder.DropTable(
                 name: "Reviews");
+
+            migrationBuilder.DropTable(
+                name: "ReviewsLikes");
 
             migrationBuilder.DropTable(
                 name: "ShoeSizes");

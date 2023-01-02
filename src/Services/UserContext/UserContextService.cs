@@ -15,4 +15,5 @@ public class UserContextService : IUserContextService
 
     public int? GetUserId =>
         User is null ? null : (int?)int.Parse(User.FindFirst(c => c.Type == "Id").Value);
+    
 }
