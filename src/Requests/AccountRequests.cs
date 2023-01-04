@@ -24,8 +24,7 @@ public static class AccountRequests
             .Produces<CreateUserCommand>()
             .Accepts<CreateUserCommand>("application/json")
             .WithValidator<CreateUserCommand>()
-            .WithTags("Account")
-            .WithValidator<CreateUserCommandValidator>();
+            .WithTags("Account");
 
         app.MapPost($"{pattern}login", Login)
             .Produces<LoginQuery>()
