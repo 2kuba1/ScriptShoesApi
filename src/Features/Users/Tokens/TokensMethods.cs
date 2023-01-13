@@ -75,7 +75,18 @@ public class TokensMethods : ITokensMethods
             DateTime.Now,
             DateTime.Now.AddMinutes(_configuration.GetValue<int>("Jwt:ExpireMinutes")),
             credentials);
+        
+        var cookieOptions = new CookieOptions()
+        {
+            HttpOnly = true,
+            Expires = DateTime.Now.AddMinutes(_configuration.GetValue<int>("Jwt:ExpireMinutes"))
+        };
 
-        return new JwtSecurityTokenHandler().WriteToken(token);
+        var accessToken = new JwtSecurityTokenHandler().WriteToken(token);
+        
+        _httpContextAccessor?.HttpContext?.Response.Cookies.Append("accessToken", accessToken,
+            cookieOptions);
+
+        return accessToken;
     }
 }
