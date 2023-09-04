@@ -12,9 +12,9 @@ using ScriptShoesAPI.Models.Users;
 using ScriptShoesAPI.Validators;
 using ScriptShoesAPI.Validators.UsersValidators;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class AccountRequests
+public static class AccountEndpoint
 {
     public static WebApplication RegisterAccountEndpoints(this WebApplication app)
     {

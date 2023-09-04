@@ -6,9 +6,9 @@ using ScriptShoesAPI.Features.Shoes.Queries.GetShoesByName;
 using ScriptShoesAPI.Features.Shoes.Queries.GetshoeWithContent;
 using ScriptShoesAPI.Models.Shoes;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class ShoesRequests
+public static class ShoesEndpoints
 {
     public static WebApplication RegisterShoesEndpoints(this WebApplication app)
     {

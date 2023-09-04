@@ -10,9 +10,9 @@ using ScriptShoesAPI.Features.AdminPanel.Commands.UpdateMainImg;
 using ScriptShoesAPI.Validators;
 using ScriptShoesCQRS.Features.AdminPanel.Commands.UpdateShoe;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class AdminPanelRequests
+public static class AdminPanelEndpoints
 {
     public static WebApplication RegisterAdminPanelEndpoints(this WebApplication app)
     {

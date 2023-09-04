@@ -13,9 +13,9 @@ using ScriptShoesAPI.Features.Reviews.Queries.GetShoeReviews;
 using ScriptShoesAPI.Models.Reviews;
 using ScriptShoesAPI.Validators;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class ReviewsRequests
+public static class ReviewsEndpoints
 {
     public static WebApplication RegisterReviewsEndpoints(this WebApplication app)
     {

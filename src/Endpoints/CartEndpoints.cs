@@ -6,9 +6,9 @@ using ScriptShoesAPI.Features.Cart.Commands.DeleteItemFromCart;
 using ScriptShoesAPI.Features.Cart.Queries.GetItemsFromCart;
 using ScriptShoesAPI.Models.Cart;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class CartRequests
+public static class CartEndpoints
 {
     public static WebApplication RegisterCartEndpoints(this WebApplication app)
     {

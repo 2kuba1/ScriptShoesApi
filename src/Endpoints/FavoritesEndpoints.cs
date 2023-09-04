@@ -6,9 +6,9 @@ using ScriptShoesAPI.Features.Favourites.Commands.RemoveShoeFromFavourites;
 using ScriptShoesAPI.Features.Favourites.Queries.GetFavourites;
 using ScriptShoesAPI.Models.Favourites;
 
-namespace ScriptShoesAPI.Requests;
+namespace ScriptShoesAPI.Endpoints;
 
-public static class FavoritesRequests
+public static class FavoritesEndpoints
 {
     public static WebApplication RegisterFavoritesEndpoints(this WebApplication app)
     {

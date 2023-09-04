@@ -15,7 +15,7 @@ using ScriptShoesAPI.Features.Users.Tokens;
 using ScriptShoesAPI.Middleware;
 using ScriptShoesAPI.Models.Reviews;
 using ScriptShoesAPI.PipelineBehaviors;
-using ScriptShoesAPI.Requests;
+using ScriptShoesAPI.Endpoints;
 using ScriptShoesAPI.Services.DiscordLogger;
 using ScriptShoesAPI.Services.EmailSender;
 using ScriptShoesAPI.Services.UserContext;
